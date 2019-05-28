@@ -5,7 +5,7 @@ use Orchestra\Testbench\TestCase as TestBenchTestCase;
 
 class TestCase extends TestBenchTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }
@@ -18,7 +18,8 @@ class TestCase extends TestBenchTestCase
     /**
      * Resolve application Console Kernel implementation.
      *
-     * @param  \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Foundation\Application $app
+     *
      * @return void
      */
     protected function resolveApplicationConsoleKernel($app)
@@ -31,9 +32,9 @@ class TestCase extends TestBenchTestCase
         // Setup default database to use sqlite :memory:
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [
-            'driver' => 'sqlite',
+            'driver'   => 'sqlite',
             'database' => ':memory:',
-            'prefix' => '',
+            'prefix'   => '',
         ]);
     }
 
@@ -50,8 +51,8 @@ class TestMigrationsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom([
-            realpath(__DIR__ . '/../migrations'),
-            realpath(__DIR__ . '/database/migrations')
+            realpath(__DIR__.'/../migrations'),
+            realpath(__DIR__.'/database/migrations'),
         ]);
     }
 }

@@ -6,17 +6,18 @@ use Ultraware\Roles\Models\Role;
 
 class PermissionHasRelationsTest extends \TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
-        $this->withFactories(__DIR__ . '/../../database/factories');
+        $this->withFactories(__DIR__.'/../../database/factories');
         $this->runMigrations();
     }
 
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Foundation\Application $app
+     *
      * @return void
      */
     protected function getEnvironmentSetUp($app)
