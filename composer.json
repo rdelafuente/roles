@@ -1,7 +1,6 @@
 {
-    "name": "ultraware/roles",
+    "name": "rdelafuente/roles",
     "description": "Powerful package for handling roles and permissions in Laravel 5.",
-    "abandoned": true,
     "keywords": [
         "roles",
         "permissions",
